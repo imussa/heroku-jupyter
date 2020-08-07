@@ -1,22 +1,19 @@
-name: heroku-jupyter
+name: root
 dependencies:
-  # bind notebook version (compatibility to pgcontents)
-  - notebook = 4
+  - pip
+  - notebook
   - ipywidgets
   - requests
-  # bind ipython version (compatibility to pgcontents)
-  - ipython = 5
-  # bind tornado version (websocket problems)
-  - tornado = 4.5
+  - ipython
+  - tornado
   # get dependencies for pgcontents
-  - certifi
+  - sqlalchemy
+  - alembic
   - click
   - cryptography 
-  - mako
-  - psycopg2
   - six
-  - sqlalchemy
-  - nose
   - pip:
-    - pgcontents
+    - git+git://github.com/quantopian/pgcontents.git@fk
+    - psycopg2-binary
     - git+git://github.com/ipython-contrib/jupyter_contrib_nbextensions.git
+    
